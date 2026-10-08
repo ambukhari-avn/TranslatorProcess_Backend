@@ -1,0 +1,24 @@
+# .NET build output
+bin/
+obj/
+*.dll
+*.pdb
+*.user
+*.suo
+.vs/
+.vscode/
+.idea/
+TestResults/
+
+# Local configuration and secrets: never committed
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.pfx
+
+# Uploaded and translated documents (confidential)
+Uploads/
+files/
+storage/
+*.docx
+*.pdf
