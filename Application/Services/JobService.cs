@@ -178,7 +178,8 @@ namespace TranslationBackend.Application.Services
                 throw new JobFileException(410, "FILE_MISSING", "The file is no longer available.");
 
             var stem = SafeFileName(Path.GetFileNameWithoutExtension(job.OriginalName));
-            var name = kind == JobFileKind.Output ? $"{stem}_{job.Language}.docx" : $"{stem}_{job.Language}_review.docx";
+            var language = job.Language.ToUpperInvariant();
+            var name = kind == JobFileKind.Output ? $"{stem}_{language}.docx" : $"{stem}_{language}_review.docx";
             return new JobFileResult(full, name, DocxContentType);
         }
 
