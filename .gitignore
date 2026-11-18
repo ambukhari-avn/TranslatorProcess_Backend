@@ -19,6 +19,6 @@ secrets.json
 # Uploaded and translated documents (confidential)
 Uploads/
 files/
-storage/
+/storage/
 *.docx
 *.pdf

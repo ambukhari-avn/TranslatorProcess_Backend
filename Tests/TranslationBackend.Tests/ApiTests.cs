@@ -214,7 +214,7 @@ public class ApiTests : IClassFixture<ApiFactory>
         var download = await client.GetAsync($"/api/documents/{id}/download");
         Assert.Equal(HttpStatusCode.OK, download.StatusCode);
         Assert.Equal("translated bytes", await download.Content.ReadAsStringAsync());
-        Assert.Contains("Pump manual_ru.docx", download.Content.Headers.ContentDisposition!.ToString().Replace("\"", ""));
+        Assert.Contains("Pump manual_RU.docx", download.Content.Headers.ContentDisposition!.ToString().Replace("\"", ""));
 
         var reviewDownload = await client.GetAsync($"/api/documents/{id}/review");
         Assert.Equal("review bytes", await reviewDownload.Content.ReadAsStringAsync());

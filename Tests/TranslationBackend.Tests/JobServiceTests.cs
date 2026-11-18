@@ -269,7 +269,7 @@ public class JobServiceTests : IDisposable
         await _service.RefreshAsync(job.Id);
 
         var file = (await _service.GetFileAsync(Amna, job.Id, JobFileKind.Output))!;
-        Assert.Equal("Quarterly report_ru.docx", file.DownloadName);
+        Assert.Equal("Quarterly report_RU.docx", file.DownloadName);
         Assert.Equal("translated", File.ReadAllText(file.FullPath));
 
         var noReview = await Assert.ThrowsAsync<JobFileException>(() => _service.GetFileAsync(Amna, job.Id, JobFileKind.Review));
